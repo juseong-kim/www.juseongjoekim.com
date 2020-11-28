@@ -17,7 +17,7 @@ module.exports = {
     require('autoprefixer')
   ],
   purge:{
-    enabled:true;
+    enabled:true,
     content:[
       './**/*.html'
     ]
