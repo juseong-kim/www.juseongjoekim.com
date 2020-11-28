@@ -1,0 +1,31 @@
+{
+  "name": "www.juseongjoekim.com",
+  "version": "1.0.0",
+  "description": "personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juseong-kim/www.juseongjoekim.com.git"
+  },
+  "author": "Juseong (Joe)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juseong-kim/www.juseongjoekim.com/issues"
+  },
+  "homepage": "https://github.com/juseong-kim/www.juseongjoekim.com#readme",
+  "dependencies": {
+    "postcss-cli": "^8.3.0"
+  },
+  "peerDependencies": {
+    "postcss": "^8.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.4",
+    "postcss": "^8.1.10",
+    "tailwindcss": "^2.0.1"
+  },
+  "build": "postcss styles/styles.css -o build/styles.css"
+}
