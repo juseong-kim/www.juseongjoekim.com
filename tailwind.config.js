@@ -1,6 +1,9 @@
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  purge: [
+    './**/*.html',
+    './**/*.js'
+  ],
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     fontFamily:{
       sans: ['Nunito','sans-serif'],
