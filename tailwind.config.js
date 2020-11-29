@@ -18,13 +18,7 @@ module.exports = {
   plugins: [
     require('tailwindcss'),
     require('autoprefixer')
-  ],
-  purge:{
-    enabled:true,
-    content:[
-      './**/*.html'
-    ]
-  }
+  ]
 }
 
 // npx tailwindcss build main.css -o output.css
