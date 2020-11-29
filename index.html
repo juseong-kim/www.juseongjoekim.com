@@ -10,8 +10,7 @@
 
     <div class="bg-scroll bg-cover" style="background-image: url(/images/blackwhite.jpg)">
         
-        <nav :class="{'scrolled':!view.atTopOfPage}"
-            class="navbar fixed-top navbar-dark navbar-transparent">
+        <nav class="navbar fixed-top navbar-dark navbar-transparent">
             <div class="container mx-auto px-6 py-4 flex justify-between items-center">
                 <a class="text-xl lg:text-2xl" href="#">
                 Juseong Joe Kim
@@ -26,8 +25,7 @@
                 <div class="block lg:hidden">
                     <button onclick="toggleNavbar('navbar')"
                         class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600
-                        hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none
-                        transition delay-300">
+                        hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none">
                         <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <title>Menu</title>
                             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
@@ -118,35 +116,7 @@
     function toggleNavbar(collapseID){
         document.getElementById(collapseID).classList.toggle("hidden");
         document.getElementById(collapseID).classList.toggle("flex");
-    }
-
-    data () {
-        return {
-            view: {
-                atTopOfPage: true
-            }
-        }
-    },
-
-    // a beforeMount call to add a listener to the window
-    beforeMount () {
-        window.addEventListener('scroll', this.handleScroll);
-    },
-
-    methods: {
-        // the function to call when the user scrolls, added as a method
-        handleScroll(){
-            // when the user scrolls, check the pageYOffset
-            if(window.pageYOffset>0){
-                // user is scrolled
-                if(this.view.atTopOfPage) this.view.atTopOfPage = false
-            }else{
-                // user is at top of page
-                if(!this.view.atTopOfPage) this.view.atTopOfPage = true
-            }
-        }
-    }
-
+    };
 
     function snow() {
         var snowflakes = [],
