@@ -134,7 +134,7 @@
             style.border = getRandomNumber(4, 8) + 'px solid ' + getRandomColor();
             style.position = 'fixed';
             style.zIndex = '999999';
-            style.opacity = '0.9';
+            style.opacity = '0.8';
             style.filter = 'alpha(opacity=90)';
             style.top = getRandomNumber(0, browserHeight) + 'px';
             style.left = getRandomNumber(0, browserWidth) + 'px';
@@ -147,7 +147,7 @@
         */
         function moveChristmasballs() {
             var l = christmasballs.length, i;
-            moveAngle += 0.01;
+            moveAngle += 0.005;
             for (i=0; i<l; i++) {
             moveChristmasball(christmasballs[i]);
             }
