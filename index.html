@@ -10,7 +10,8 @@
 
     <div class="bg-scroll bg-cover" style="background-image: url(/images/blackwhite.jpg)">
         
-        <nav class="navbar fixed-top navbar-dark navbar-transparent">
+        <nav :class="{'scrolled':!view.atTopOfPage}"
+            class="navbar fixed-top navbar-dark navbar-transparent">
             <div class="container mx-auto px-6 py-4 flex justify-between items-center">
                 <a class="text-xl lg:text-2xl" href="#">
                 Juseong Joe Kim
@@ -38,7 +39,7 @@
 
         <div class="py-16">
             <div class="container mx-auto px-6 text-center py-16">
-                <h2 class="text-4xl font-bold mb-8 text-gray-800">Welcome to my website</h2>
+                <h2 class="text-4xl font-bold mb-8 text-gray-800">Hi, I go by Joe</h2>
                 <button onclick="snow()" class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">Destress</button>
             </div>
         </div>
@@ -63,7 +64,7 @@
                 
                 <div class="w-full md:w-1/2 flex-1">
                     <h4 class="text-3xl text-gray-700 font-bold mb-3">This Website</h4>
-                    <p class="text-gray-600 mb-8">Created using HTML and Tailwind CSS.</p>
+                    <p class="text-gray-600 mb-8">Created using HTML, Javascript, and Tailwind CSS.</p>
                 </div>
             </div>
 
@@ -94,6 +95,7 @@
 
         <!-- add footer -->
         <footer>
+            <p class="mt-4 text-lg text-center text-white">Created by Juseong (Joe) Kim</p>
 
         </footer>
 
@@ -101,12 +103,50 @@
 
 </html>
 
+<style>
+    nav{
+        z-index:1
+    }
+    nav.scrolled{
+        @apply shadow-2x1;
+        border-bottom:0px;
+    }
+</style>
+
 <!-- make toggle slower and animated -->
 <script>
     function toggleNavbar(collapseID){
         document.getElementById(collapseID).classList.toggle("hidden");
         document.getElementById(collapseID).classList.toggle("flex");
     }
+
+    data () {
+        return {
+            view: {
+                atTopOfPage: true
+            }
+        }
+    },
+
+    // a beforeMount call to add a listener to the window
+    beforeMount () {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+
+    methods: {
+        // the function to call when the user scrolls, added as a method
+        handleScroll(){
+            // when the user scrolls, check the pageYOffset
+            if(window.pageYOffset>0){
+                // user is scrolled
+                if(this.view.atTopOfPage) this.view.atTopOfPage = false
+            }else{
+                // user is at top of page
+                if(!this.view.atTopOfPage) this.view.atTopOfPage = true
+            }
+        }
+    }
+
 
     function snow() {
         var snowflakes = [],
