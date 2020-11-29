@@ -36,7 +36,7 @@
         <div class="py-16">
             <div class="container mx-auto px-6 text-center py-16">
                 <h2 class="text-4xl font-bold mb-8 text-gray-800">Welcome to my website</h2>
-                <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">Destress Button</button>
+                <button onclick="snow()" bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">Destress Button</button>
             </div>
         </div>
 
@@ -95,4 +95,108 @@
         document.getElementById(collapseID).classList.toggle("hidden");
         document.getElementById(collapseID).classList.toggle("flex");
     }
+
+    function snow() {
+        var christmasballs = [], moveAngle = 0, animationInterval;
+        var browserWidth = document.body.clientWidth;
+        var browserHeight = window.innerHeight;
+        /**
+        * Generates a random number between the min and max (inclusive).
+        * @method getRandomNumber
+        * @param {Number} min
+        * @param {Number} max
+        * @return {Number}
+        */
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        /**
+        * Generates a random color.
+        * @method getRandomColor
+        * @return {Color}
+        */
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (i=0; i<6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        /**
+        * Creates a new christmasball div and returns it.
+        * @method createChristmasball
+        * @return {HTMLElement}
+        */
+        function createChristmasball() {
+            var el = document.createElement('div'), style = el.style;
+            style.borderRadius = '100%';
+            style.border = getRandomNumber(4, 8) + 'px solid ' + getRandomColor();
+            style.position = 'fixed';
+            style.zIndex = '999999';
+            style.opacity = '0.9';
+            style.filter = 'alpha(opacity=90)';
+            style.top = getRandomNumber(0, browserHeight) + 'px';
+            style.left = getRandomNumber(0, browserWidth) + 'px';
+            return el;
+        }
+        /**
+        * Calls the moveChristmasball method for each of the christmasballs in the cache.
+        * @method moveChristmasballs
+        * @return {Void}
+        */
+        function moveChristmasballs() {
+            var l = christmasballs.length, i;
+            moveAngle += 0.01;
+            for (i=0; i<l; i++) {
+            moveChristmasball(christmasballs[i]);
+            }
+        }
+        /**
+        * Moves an individual christmasball element using some simple math.
+        * @method moveChristmasball
+        * @param {HTMLElement} el
+        * @return {Void}
+        */
+        function moveChristmasball(el) {
+            var style = el.style, height = browserHeight, radius, top;
+            radius = parseInt(style.border, 10);
+            top = parseInt(style.top, 10);
+            top += Math.cos(moveAngle) + 1 + radius/2;
+            if (top > height) {
+            resetChristmasball(el);
+            }
+            else {
+            style.top = top + 'px';
+            }
+        }
+        /**
+        * Puts the christmasball back at the top in a random horizontal start position.
+        * @method resetChristmasball
+        * @param {HTMLElement} el
+        * @return {Void}
+        */
+        function resetChristmasball(el) {
+            var style = el.style;
+            style.top = '0px';
+            style.left = getRandomNumber(0, browserWidth) + 'px';
+        }
+        /**
+        * The kick-off method. Asks how many christmasballs to make and then makes them!
+        * @method setup
+        * @return {Void}
+        */
+        function setup() {
+            var number = prompt('How many Christmas balls would you like?'), particle, i;
+            // var number = 150, particle, i;
+            // Setup snow particles
+            for (i=0; i<number; i++) {
+            particle = christmasballs[i] = createChristmasball();
+            document.body.appendChild(particle);
+            }
+            // Set animation intervals
+            animationInterval = setInterval(moveChristmasballs, 33);
+        }
+        setup();
+    };
 </script>
