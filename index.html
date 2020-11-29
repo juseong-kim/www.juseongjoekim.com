@@ -37,7 +37,7 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl font-bold mb-2 text-white">My website!</h2>
                 <h3 class="text-2xl mb-8 text-gray-200">Scroll to see more</h3>
-                <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">Destress Button</button>
+                <button class="btn btn-two bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">Destress Button</button>
             </div>
         </div>
 
@@ -97,6 +97,53 @@
         document.getElementById(collapseID).classList.toggle("flex");
     }
 </script>
+
+<style>
+    .btn-two {
+        color: #FFF;
+        transition: all 0.5s;
+        position: relative; 
+    }
+    .btn-two span {
+        z-index: 2; 
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%; 
+    }
+    .btn-two::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgba(255,255,255,0.2);
+        background-color: rgba(255,255,255,0.1);
+    }
+    .btn-two::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgba(255,255,255,0.2);
+        background-color: rgba(255,255,255,0.1);
+    }
+    .btn-two:hover::before {
+        transform: rotate(-45deg);
+        background-color: rgba(255,255,255,0);
+    }
+    .btn-two:hover::after {
+        transform: rotate(45deg);
+        background-color: rgba(255,255,255,0);
+    }
+</style>
 
 <!--
     <nav class="flex flex-wrap mx-auto items-center justify-center p-6 container">
