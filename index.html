@@ -10,23 +10,23 @@
 
     <div class="bg-local" style="background-image: url(/images/blackwhite.jpg)">
         
-        <nav class="flex flex-wrap fixed mx-auto">
+        <nav class="flex flex-wrap fixed mx-auto items-center justify-center p-6">
             <div class="flex-1">Home</div>
             <div class="flex-1">Portfolio</div>
             <div class="flex-1">Contact</div>
         </nav>
 
-        <div class="flow-root">
+        <div class="flow-root p-6">
             <div class=""> Juseong Joe Kim </div>
             <div class=""> BME CS </div>
         </div>
 
-        <div class="space-x-2">
+        <div class="space-x-2 p-6">
             <span class="block">project1</span>
             <span class="block">project1</span>
         </div>
 
-        <div class="space-x-4">
+        <div class="space-x-4 p-6">
             <div class="inline-block">fb</div>
             <div class="inline-block">git</div>
             <div class="inline-block">li</div>
@@ -36,7 +36,12 @@
 
 </html>
 
-
+<script>
+    function toggleNavbar(collapseID){
+        document.getElementById(collapseID).classList.toggle("hidden");
+        document.getElementById(collapseID).classList.toggle("flex");
+    }
+</script>
 <!--
     <header>
         <nav class="flex flex-wrap items-center justify-center p-6 navbar-expand-lg container mx-auto">
@@ -68,10 +73,5 @@
         </nav>
     </header>
 
-    <script>
-        function toggleNavbar(collapseID){
-            document.getElementById(collapseID).classList.toggle("hidden");
-            document.getElementById(collapseID).classList.toggle("flex");
-        }
-    </script>
+    
 -->
