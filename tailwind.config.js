@@ -10,7 +10,11 @@ module.exports = {
       display: ['Nunito','sans-serif'],
       body: ['Nunito','sans-serif']
     },
-    extend: {},
+    extend: {
+      backgroundImage: theme=>({
+        'blackwhite': "url('/images/blackwhite.jpg')",
+      })
+    },
   },
   variants: {
     extend: {},
