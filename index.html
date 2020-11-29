@@ -11,22 +11,34 @@
     <div class="bg-local" style="background-image: url(/images/blackwhite.jpg)">
         
         <nav class="flex flex-wrap fixed mx-auto items-center justify-center p-6">
-            <div class="flex-1">Home</div>
-            <div class="flex-1">Portfolio</div>
-            <div class="flex-1">Contact</div>
+            <div class="text-lg text-gray-600 hidden lg:flex" id='navbar'>
+                <a href="#home" class="block lg:inline-block text-teal-600">Home</a>
+                <a href="#portfolio" class="block lg:inline-block hover:opacity-75">Portfolio</a>
+                <a href="#contact" class="block lg:inline-block hover:opacity-75">Contact</a>
+            </div>
+
+            <div class="block lg:hidden">
+                <button onclick="toggleNavbar('navbar')" class="flex items-center rounded focus:outline-none">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
+            </div>
+            
         </nav>
 
-        <div class="flex flex-wrap p-6 items-center h-200">
+        <div class="flex flex-wrap p-6 items-center h-200" id="home">
             <div class="flex-1"> Juseong Joe Kim </div>
             <div class="flex-1"> BME CS </div>
         </div>
 
-        <div class="space-x-2 p-6 justify-center h-400">
+        <div class="space-x-2 p-6 justify-center h-400" id="portfolio">
             <span class="block">project1</span>
             <span class="block">project1</span>
         </div>
 
-        <div class="space-x-4 p-6 h-100">
+        <div class="space-x-4 p-6 h-100" id="contact">
             <div class="inline-block">fb</div>
             <div class="inline-block">git</div>
             <div class="inline-block">li</div>
