@@ -12,7 +12,13 @@ module.exports = {
     },
     extend: {
       animation:{
-        'spin-slow': 'spin 3s linear infinite'
+        'spin-slow': 'spin 3s linear infinite',
+      },
+      keyframes:{
+        spin:{
+          from:{transform: 'rotate(0deg)'},
+          to:{ transform: 'rotate(360deg)'}
+        }
       }
     },
   },
