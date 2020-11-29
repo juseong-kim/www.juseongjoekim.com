@@ -10,7 +10,11 @@ module.exports = {
       display: ['Nunito','sans-serif'],
       body: ['Nunito','sans-serif']
     },
-    extend: {},
+    extend: {
+      animation:{
+        'spin-slow': 'spin 3s linear infinite'
+      }
+    },
   },
   variants: {
     extend: {
