@@ -25,7 +25,8 @@ module.exports = {
   variants: {
     extend: {
       backgroundImage: ['hover','focus'],
-      animation: ['hover','focus']
+      animation: ['hover','focus'],
+      transform: ['hover','focus']
     },
   },
   plugins: [
