@@ -11,6 +11,7 @@ module.exports = {
       body: ['Nunito','sans-serif']
     },
     extend: {
+      /*
       animation:{
         'spin-slow': 'spin 3s linear infinite',
       },
@@ -20,6 +21,7 @@ module.exports = {
           to:{ transform: 'rotate(360deg)'}
         }
       }
+      */
     },
   },
   variants: {
