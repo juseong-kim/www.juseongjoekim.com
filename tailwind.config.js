@@ -11,6 +11,10 @@ module.exports = {
       body: ['Nunito','sans-serif']
     },
     extend: {
+      backgroundImage:theme=>({
+        'h-teal':"url('images/h-teal.png')",
+        'h-purple':"url('images/h-purple.png')"
+      })
       /*
       animation:{
         'spin-slow': 'spin 3s linear infinite',
