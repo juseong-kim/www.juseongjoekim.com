@@ -1,45 +1,49 @@
 module.exports = {
-  purge: [
-    './**/*.html',
-    './**/*.js'
-  ],
-  darkMode: 'media', // or 'media' or 'class'
-  theme: {
-    fontFamily:{
-      sans: ['Nunito','sans-serif'],
-      display: ['Nunito','sans-serif'],
-      body: ['Nunito','sans-serif']
+    purge: [
+        './**/*.html',
+        './**/*.js'
+    ],
+    darkMode: 'media', // or 'media' or 'class'
+    theme: {
+        fontFamily: {
+            sans: ['Nunito', 'sans-serif'],
+            display: ['Nunito', 'sans-serif'],
+            body: ['Nunito', 'sans-serif']
+        },
+        extend: {
+            backgroundImage: theme => ({
+                'h-teal': "url('images/h-teal.png')",
+                'h-purple': "url('images/h-purple.png')"
+            }),
+            keyframes: {
+                wiggle: {
+                    '0%, 100%': {transform: 'rotate(-3deg)'},
+                    '50%': {transform: 'rotate(3deg)'},
+                },
+                roll: {
+                    '0%, 100%': {transform: 'translateX(0) rotate(0deg)'},
+                    '50%': {transform: 'translateX(20rem) rotate(385deg)'}
+                }
+            },
+            animations: {
+                'bounce-slow': 'bounce 2s infinite',
+                wiggle: 'wiggle 1s ease-in-out infinite',
+                roll: 'roll 3s ease-in-out infinite'
+            }
+        },
     },
-    extend: {
-      backgroundImage:theme=>({
-        'h-teal':"url('images/h-teal.png')",
-        'h-purple':"url('images/h-purple.png')"
-      })
-      /*
-      animation:{
-        'spin-slow': 'spin 3s linear infinite',
-      },
-      keyframes:{
-        spin:{
-          from:{transform: 'rotate(0deg)'},
-          to:{ transform: 'rotate(360deg)'}
-        }
-      }
-      */
+    variants: {
+        extend: {
+            backgroundImage: ['hover', 'focus'],
+            animation: ['hover', 'focus'],
+            transform: ['hover', 'focus'],
+            transitionProperty: ['hover', 'focus'],
+        },
     },
-  },
-  variants: {
-    extend: {
-      backgroundImage: ['hover','focus'],
-      animation: ['hover','focus'],
-      transform: ['hover','focus'],
-      transitionProperty: ['hover','focus'],
-    },
-  },
-  plugins: [
-    require('tailwindcss'),
-    require('autoprefixer')
-  ]
+    plugins: [
+        require('tailwindcss'),
+        require('autoprefixer')
+    ]
 }
 
 // npx tailwindcss build main.css -o output.css
