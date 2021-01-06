@@ -32,7 +32,8 @@ module.exports = {
     extend: {
       backgroundImage: ['hover','focus'],
       animation: ['hover','focus'],
-      transform: ['hover','focus']
+      transform: ['hover','focus'],
+      transitionProperty: ['hover','focus'],
     },
   },
   plugins: [
