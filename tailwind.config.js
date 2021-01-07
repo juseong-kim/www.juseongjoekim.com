@@ -11,6 +11,12 @@ module.exports = {
             body: ['Nunito', 'sans-serif']
         },
         extend: {
+            colors:{
+                beelue:{
+                    light: '#006098',
+                    dark: '#0075a9',
+                }
+            },
             backgroundImage: theme => ({
                 'h-teal': "url('images/h-teal.png')",
                 'h-purple': "url('images/h-purple.png')"
@@ -42,7 +48,7 @@ module.exports = {
     },
     plugins: [
         require('tailwindcss'),
-        require('autoprefixer')
+        require('autoprefixer'),
     ]
 }
 
