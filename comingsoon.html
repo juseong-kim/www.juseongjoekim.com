@@ -15,13 +15,14 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+<!-- navbar -->
 <header id="nav"
-        class="w-full text-white bg-gradient-to-t from-transparent via-beelue-light to-beelue-dark dark-mode:text-gray-200 dark-mode:bg-gray-800 fixed z-50 invisible">
+        class="w-full text-gray-700 dark-mode:text-gray-200 dark-mode:bg-gray-800 fixed z-50 invisible">
     <div x-data="{ open: false }"
          class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:px-6 lg:px-8">
         <div class="p-4 flex flex-row md:flex-col items-center justify-between">
-            <a href="#hero"
-               class="text-xl font-bold tracking-widest text-blue-50 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">
+            <a href="#home"
+               class="text-xl font-bold tracking-widest uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">
                 Juseong Joe Kim
             </a>
             <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
@@ -48,7 +49,20 @@
     </div>
 </header>
 
-<section id="hero" class="text-gray-600 body-font h-screen">
+<!-- pagination -->
+<ul class="fixed right-4 top-1/2 transform -translate-y-1/2 text-md justify-items-end z-10">
+    <li><a class="block" href="#home"><span class="opacity-0 hover:opacity-100">Home</span>
+        <i id="i1" class="far fa-circle" style="color:#006098"></i></a></li>
+    <li><a class="block" href="#projects"><span class="opacity-0 hover:opacity-100">Home</span>
+        <i id="i2" class="far fa-circle" style="color:#006098"></i></a></li>
+    <li><a class="block" href="#skills"><span class="opacity-0 hover:opacity-100">Home</span>
+        <i id="i3" class="far fa-circle" style="color:#006098"></i></a></li>
+    <li><a class="block" href="#contact"><span class="opacity-0 hover:opacity-100">Home</span>
+        <i id="i4" class="far fa-circle" style="color:#006098"></i></a></li>
+</ul>
+
+<!-- hero -->
+<section id="home" data-hash="home" class="section text-gray-600 body-font h-screen">
     <div class="container h-screen mx-auto px-auto md:py-32 py-24 relative">
         <div class="container relative inset-0 flex items-center justify-center h-full px-auto mx-auto">
             <img class="w-auto h-full opacity-50 z-30
@@ -98,13 +112,14 @@
     </div>
 </section>
 
-<section id="projects" class="h-screen text-blue-50 body-font bg-gradient-to-t from-beelue-dark to-beelue-light">
+<!-- projects -->
+<section id="projects" data-hash="projects" class="section h-screen text-gray-800 body-font">
     <div class="container h-screen mx-auto flex px-8 py-20 md:px-24 md:py-12 md:flex-row flex-col items-center">
         <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600">
         </div>
         <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Title
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium">Title
                 <br class="hidden lg:inline-block">--caption--
             </h1>
             <p class="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant
@@ -124,10 +139,32 @@
 
 </body>
 </html>
+
 <script>
     var nav = document.getElementById('nav');
     var down = document.getElementById('down');
+    const home = document.getElementById('home');
+    const projects = document.getElementById('projects');
+    const skills = document.getElementById('skills');
 
+    var i1 = document.getElementById('i1');
+    var i2 = document.getElementById('i2');
+    var i3 = document.getElementById('i3');
+    var i4 = document.getElementById('i4');
+
+    // update pagination based on viewport
+    function isInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+
+        );
+    }
+
+    // show navbar on scroll
     window.addEventListener('scroll', function () {
         if (window.scrollY >= 500) { // adjust this value based on site structure and header image height
             nav.classList.remove('invisible');
@@ -137,8 +174,37 @@
             down.classList.remove('invisible');
         }
     });
-</script>
-<script>
+
+    window.addEventListener('scroll', function () {
+        if(isInViewport(home)){
+            i1.classList.add('fas');
+            i2.classList.remove('fas');
+            i3.classList.remove('fas');
+            i4.classList.remove('fas');
+        }
+        else if(isInViewport(projects)){
+            i1.classList.remove('fas');
+            i2.classList.add('fas');
+            i3.classList.remove('fas');
+            i4.classList.remove('fas');
+        }
+        else if(isInViewport(skills)){
+            i1.classList.remove('fas');
+            i2.classList.remove('fas');
+            i3.classList.add('fas');
+            i4.classList.remove('fas');
+        }
+        // else if(isInViewport(contact)){
+        //     i1.classList.remove('fas');
+        //     i2.classList.remove('fas');
+        //     i3.classList.remove('fas');
+        //     i4.classList.add('fas');
+        // }
+
+    },{ passive: true });
+
+
+    //smooth scroll all links
     $(document).ready(function () {
         // Add smooth scrolling to all links
         $("a").on('click', function (event) {
@@ -162,5 +228,29 @@
                 });
             } // End if
         });
+    });
+
+    // set hash based on location
+    $(document).ready(function(){
+        var sections = {};
+
+        $(".section").each(function () {
+            var hash = $(this).data("hash"),
+                topOffset = $(this).offset().top;
+            sections[topOffset] = hash;
+        });
+
+        $(window).scroll(function (e) {
+            var scrollTop = $(window).scrollTop();
+            setHash(scrollTop);
+        });
+
+        function setHash(st) {
+            var hash = "";
+            for (section in sections) {
+                if (section < st + ($(window).height() / 2)) hash = sections[section];
+            }
+            window.location.hash = hash;
+        }
     });
 </script>

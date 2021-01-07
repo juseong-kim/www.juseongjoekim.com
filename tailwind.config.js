@@ -44,6 +44,7 @@ module.exports = {
             animation: ['hover', 'focus'],
             transform: ['hover', 'focus'],
             transitionProperty: ['hover', 'focus'],
+            visibility: ['hover', 'focus'],
         },
     },
     plugins: [
