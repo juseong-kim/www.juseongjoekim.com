@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Juseong Joe Kim | BME/CS</title>
+        <link rel="shortcut icon" type="image/png" href="../images/jk.png">
+        <link rel="stylesheet" href="../output.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    </head>
+
+    <div class="bg-scroll bg-cover" style="background-image: url(/images/blackwhite.jpg)">
+        <nav class="fixed flex w-full flex-wrap top-0">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a class="text-xl font-light lg:font-normal inline-block" href="#">Juseong Joe Kim</a>
+                <div class="hidden lg:inline-block" id="navbar">
+                    <ul class="inline-flex flex-wrap">
+                        <li><a class="px-4 font-bold" href="/">Home</a></li>
+                        <li><a class="px-4 hover:text-gray-800" href="#portfolio">Portfolio</a></li>
+                        <li><a class="px-4 hover:text-gray-800" href="creative.html">Creative</a></li>
+                        <li><a class="px-4 hover:text-gray-800" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="inline-block lg:hidden">
+                    <button onclick="toggleNavbar('navbar')"
+                        class="flex items-center mx-auto px-3 py-2 border rounded text-gray-500 border-gray-600
+                        hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none">
+                        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <title>Menu</title>
+                            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="py-24">
+            <div class="container mx-auto px-6 text-center h-screen">
+                <h2 class="text-4xl font-bold mb-2 text-gray-800">Hi! I go by Joe.</h2>
+                <h3 class="text-2xl mb-8 text-gray-700">I study BME and CS at Duke.</h3>
+                <button onclick="snow()" class="focus:outline-none">
+                    <img src="../images/profile.jpg" class=" mx-auto rounded-full shadow-lg w-72 h-auto border-none hover:opacity-95" alt="My face"/>
+                </button>
+            </div>
+        </div>
+
+        <section class="container mx-auto px-6 p-10 bg-gray-200 bg-opacity-75 rounded-md" id="portfolio">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mt-12 mb-20">Technical Projects</h2>
+
+            <div class="flex items-center text-center flex-wrap flex-col mb-20 mx-auto">               
+                <a href="https://dbdp.org/" target="_blank">
+                    <img class="w-80 mx-auto flex-1" src="../images/dbdp.png" alt="Digital Biomarker Discovery Pipeline"/>
+                </a>                  
+                
+                <div class="w-3/4 md:w-1/2 flex-1">
+                    <h4 class="text-3xl text-gray-700 font-bold mb-3">Digital Biomarker Discovery Pipeline</h4>
+                    <p class="text-lg text-gray-700 mb-8">The
+                        <a href="https://github.com/DigitalBiomarkerDiscoveryPipeline/Data-Compression-Toolbox" target="_blank" class="italic">
+                            Data Compression Toolbox
+                        </a>
+                        was evaluated on five types of wearable sensor data: ACC, ECG, EDA, PPG,and TEMP.
+                    </p>
+                </div>
+                
+            </div>
+          
+            <div class="flex items-center text-center flex-wrap flex-col mb-12 mx-auto">
+                <a href="https://github.com/juseong-kim/Covid_SIR" target="_blank">
+                    <img class="flex-1 mx-auto w-72" src="../images/duke.png" alt="Duke University Logo" />
+                </a>
+                
+                <div class="w-3/4 md:w-1/2 flex-1">
+                    <h4 class="text-3xl text-gray-700 font-bold mb-3">Duke University COVID-19 SIR Model</h4>
+                    <p class="text-lg text-gray-700 mb-8">A modified SIR model with vaccinations of on-/off-campus populations.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="py-20 bg-transparent" id="contact">
+            <div class="container mx-auto px-6 text-center py-20">
+                <h2 class="text-4xl font-bold text-center text-white">
+                    Get in touch!
+                </h2>
+                <div class="space-x-12 my-6" style="color:snow">
+                    <a href="https://github.com/juseong-kim" target="_blank"
+                    class="inline-block fab fa-github fa-3x hover:ring-gray-100">
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/juseong-joe-kim/" target="_blank"
+                        class="inline-block fab fa-linkedin-in fa-3x hover:scale-110">          
+                    </a>
+                
+                    <a href="mailto:juseong.kim@duke.edu" target="_blank"
+                        class="inline-block far fa-envelope fa-3x">
+                    </a>
+
+                    <a href="https://musescore.com/user/28392174" target="_blank"
+                        class="inline-block fas fa-music fa-3x">
+                    </a>
+                </div>              
+            </div>
+        </section>
+
+        <footer class="py-8">
+            <p class="text-sm text-center text-opacity-80 text-gray-100">Created and Designed by Juseong (Joe)
+                <a href="../index.html">Kim</a></p>
+        </footer>
+
+    </div>
+
+</html>
+
+<!--
+    <style>
+        @font-face{
+            font-family:Madelyn;
+            src: url("fonts/Sweet\ Madelyn.otf") format("opentype");
+        }
+    </style>
+-->
+
+
+<!-- make toggle slower and animated -->
+<script>
+    function toggleNavbar(collapseID){
+        document.getElementById(collapseID).classList.toggle("hidden");
+        document.getElementById(collapseID).classList.toggle("flex");
+    };
+
+    function snow() {
+        var snowflakes = [],
+            moveAngle = 0,
+            animationInterval;
+
+        /**
+        * Generates a random number between the min and max (inclusive).
+        * @method getRandomNumber
+        * @param {Number} min
+        * @param {Number} max
+        * @return {Number}
+        */
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        /**
+        * Creates a new snowflake div and returns it.
+        * @method createSnowflake
+        * @return {HTMLElement}
+        */
+        function createSnowflake() {
+            var el = document.createElement('div'),
+                style = el.style;
+
+            style.borderRadius = '100%';
+            style.border = getRandomNumber(1, 4) + 'px solid white';
+            style.position = 'fixed';
+            style.zIndex = '999999';
+            style.boxShadow = '0 0 2px rgba(255,255,255,0.8)';
+            style.top = getRandomNumber(0, window.innerHeight) + 'px';
+            style.left = getRandomNumber(0, window.innerWidth) + 'px';
+
+            return el;
+        }
+
+        /**
+        * Calls the moveSnowflake method for each of the snowflakes in the cache.
+        * @method moveSnowflakes
+        * @return {Void}
+        */
+        function moveSnowflakes() {
+            var l = snowflakes.length,
+                i;
+
+            moveAngle += 0.005;
+
+            for (i=0; i<l; i++) {
+            moveSnowflake(snowflakes[i]);
+            }
+        }
+
+        /**
+        * Moves an individual snowflake element using some simple math.
+        * @method moveSnowflake
+        * @param {HTMLElement} el
+        * @return {Void}
+        */
+        function moveSnowflake(el) {
+            var style = el.style,
+                height = window.innerHeight,
+                radius,
+                top;
+
+            radius = parseInt(style.border, 10);
+
+            top = parseInt(style.top, 10);
+            top += Math.cos(moveAngle) + 1 + radius/2;
+
+            if (top > height) {
+            resetSnowflake(el);
+            } else {
+            style.top = top + 'px';
+            }
+        }
+
+        /**
+        * Puts the snowflake back at the top in a random horizontal start position.
+        * @method resetSnowflake
+        * @param {HTMLElement} el
+        * @return {Void}
+        */
+        function resetSnowflake(el) {
+            var style = el.style;
+
+            style.top = '0px';
+            style.left = getRandomNumber(0, window.innerWidth) + 'px';
+        }
+
+        /**
+        * The kick-off method. Asks how many snowflakes to make and then makes them!
+        * @method setup
+        * @return {Void}
+        */
+        function setup() {
+            var number = 40,particle,i;
+
+            // Setup snow particles
+            for (i=0; i<number; i++) {
+            particle = snowflakes[i] = createSnowflake();
+            document.body.appendChild(particle);
+            }
+
+            // Set animation intervals
+            animationInterval = setInterval(moveSnowflakes, 33);
+        }
+        setup();
+        };
+</script>
