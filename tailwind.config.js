@@ -11,6 +11,9 @@ module.exports = {
             body: ['Nunito', 'sans-serif']
         },
         extend: {
+            flex:{
+                '0': '0 0 auto',
+            },
             colors:{
                 beelue:{
                     light: '#006098',
