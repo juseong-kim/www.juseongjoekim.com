@@ -11,9 +11,6 @@ module.exports = {
             body: ['Nunito', 'sans-serif']
         },
         extend: {
-            flex:{
-                '0': '0 0 auto',
-            },
             colors:{
                 beelue:{
                     light: '#006098',
@@ -34,8 +31,9 @@ module.exports = {
                     '50%': {transform: 'translateX(20rem) rotate(385deg)'}
                 }
             },
-            animations: {
+            animation: {
                 'bounce-slow': 'bounce 2s infinite',
+                'spin-slow': 'spin 4s linear infinite',
                 wiggle: 'wiggle 1s ease-in-out infinite',
                 roll: 'roll 3s ease-in-out infinite'
             }
