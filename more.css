@@ -5,3 +5,62 @@ html {
 section {
   scroll-snap-align: start;
 }
+
+.marquee {
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+}
+
+.marquee span {
+    padding-left:100%;
+    animation: marquee 10s linear infinite;
+    animation-delay: 10s;
+}
+
+.marquee2 span {
+  animation-delay: 0s;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0%);
+  }
+  100% {
+    transform: translate(-100%);
+  }
+}
+
+
+/*.marquee {*/
+/*    overflow: hidden;*/
+/*    --offset: 20vw;*/
+/*    --move-initial: calc(-25% + var(--offset));*/
+/*    --move-final: calc(-50% + var(--offset));*/
+/*}*/
+
+/*.marquee__inner {*/
+/*    transform: translate3d(var(--move-initial), 0, 0);*/
+/*    animation: marquee 7s linear infinite;*/
+/*    animation-play-state: paused;*/
+/*}*/
+
+/*.marquee span {*/
+/*    font-size: 6vw;*/
+/*    padding: 0 2vw;*/
+/*}*/
+
+/*.marquee .marquee__inner {*/
+/*    animation-play-state: running;*/
+/*}*/
+
+/*@keyframes marquee {*/
+/*    0% {*/
+/*        transform: translate3d(var(--move-initial), 0, 0);*/
+/*    }*/
+
+/*    100% {*/
+/*        transform: translate3d(var(--move-final), 0, 0);*/
+/*    }*/
+/*}*/

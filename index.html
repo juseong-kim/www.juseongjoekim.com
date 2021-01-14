@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="more.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.0/css/all.css">
 </head>
 
@@ -15,11 +16,12 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<!-- navbar -->
+<!-- Navbar -->
 <header id="nav"
         class="w-full bg-white bg-opacity-50 text-gray-700 dark-mode:text-gray-200 dark-mode:bg-gray-800 fixed z-30">
     <div x-data="{ open: false }"
          class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:px-6 lg:px-8">
+        <!-- name -->
         <div class="p-4 flex flex-row md:flex-col items-center justify-between">
             <a href="#home"
                class="text-xl font-bold tracking-widest uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">
@@ -37,19 +39,20 @@
             </button>
         </div>
 
+        <!-- contents -->
         <nav :class="{'flex': open, 'hidden': !open}"
              class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-            <a id="navp" class="px-4 py-2 mt-2 text-md font-semibold bg-opacity-30 md:bg-opacity-20 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+            <a id="navp" class="px-4 py-2 mt-2 text-md font-semibold bg-opacity-30 md:bg-opacity-20 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                href="#projects">Projects</a>
-            <a id="navs" class="px-4 py-2 mt-2 text-md font-semibold bg-opacity-30 md:bg-opacity-20 rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+            <a id="navs" class="px-4 py-2 mt-2 text-md font-semibold bg-opacity-30 md:bg-opacity-20 rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                href="#free_time">Free Time</a>
-            <a id="navc" class="px-4 py-2 mt-2 text-md font-semibold bg-opacity-30 md:bg-opacity-20 rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+            <a id="navc" class="px-4 py-2 mt-2 text-md font-semibold bg-opacity-30 md:bg-opacity-20 rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                href="#contact">Contact</a>
         </nav>
     </div>
 </header>
 
-<!-- pagination -->
+<!-- Pagination -->
 <ul class="fixed right-4 top-1/2 transform -translate-y-1/2 text-sm text-gray-800 flex flex-col items-end z-10 invisible md:visible">
     <li class="py-1"><span class="opacity-0 hover:opacity-100">Home</span>
         <a href="#home"><i id="i1" class="far fas fa-circle" style="color:#006098"></i></a></li>
@@ -61,38 +64,43 @@
         <a href="#contact"><i id="i4" class="far fa-circle" style="color:#006098"></i></a></li>
 </ul>
 
-<!-- hero -->
-<section id="home" data-hash="home" class="section text-gray-600 body-font h-screen">
+<!-- Hero -->
+<section id="home" data-hash="home" class="section text-gray-600 body-font h-screen transform-gpu">
+
     <div class="container h-screen mx-auto px-auto md:py-32 py-24 relative">
-        <div class="container relative inset-0 flex items-center justify-center h-full px-auto mx-auto">
-            <img class="w-auto h-full opacity-50 z-30
-                        transition duration-1000 ease-in-out transform hover:skew-x-2"
-                 alt="blue" src="images/Asset%203.png">
+        <div class="container relative inset-0 flex items-center justify-center h-full">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <a class="contents" href="#projects">
+                    <img class="w-auto h-full opacity-50 z-30
+                            transition duration-700 ease-in-out transform hover:-skew-y-2 hover:-rotate-3"
+                         alt="blue-2" src="images/Asset%203.png">
+                </a>
+            </div>
             <div class="absolute inset-0 flex items-center justify-center">
                 <a class="contents" href="#projects">
                     <img class="w-auto h-5/6 opacity-50 z-30
-                            transition duration-150 ease-in-out transform hover:-skew-y-2"
+                            transition duration-700 ease-in-out transform hover:-skew-y-2 hover:-rotate-3"
                          alt="blue-2" src="images/Asset%203.png">
                 </a>
             </div>
             <div class="absolute inset-0 flex items-center justify-center">
                 <a class="contents" href="#projects">
                     <img class="w-auto h-4/6 opacity-50 z-40
-                            transition duration-200 ease-in-out transform hover:skew-x-2"
+                            transition duration-500 ease-in-out transform hover:skew-x-2 hover:rotate-3"
                          alt="blue-2" src="images/Asset%203.png">
                 </a>
             </div>
             <div class="absolute inset-0 flex items-center justify-center">
                 <a class="contents" href="#projects">
                     <img class="w-auto h-3/6 opacity-50 z-50
-                            transition duration-500 ease-in-out transform hover:scale-105 hover:skew-y-2"
+                            transition duration-700 ease-in-out transform hover:scale-105 hover:skew-y-6 hover:-rotate-1"
                          alt="blue-2" src="images/Asset%203.png">
                 </a>
             </div>
             <div class="absolute inset-0 flex items-center justify-center">
                 <a class="contents" href="#projects">
                     <img id="joe" class="w-1/3 md:w-1/4 lg:w-1/6 xl:w-1/12 -ml-6 md:-ml-12 -mt-9 md:-mt-11 lg:-mt-14 xl:-mt-10 z-50
-                            transition duration-1000 ease-in-out transform hover:translate-x-12"
+                            transition duration-700 ease-in-out transform hover:translate-x-12"
                          alt="joe" src="images/joe.png">
                 </a>
             </div>
@@ -103,6 +111,12 @@
                          alt="kim" src="images/kim.png">
                 </a>
             </div>
+            <!--            <div class="marquee absolute top-1/4 inset-x-0 text-4xl font-bebas text-beelue-dark text-opacity-50 inline-block">-->
+            <!--                <span>Biomedical Engineering and Computer Science&nbsp;</span>-->
+            <!--            </div>-->
+            <!--            <div class="marquee marquee2 absolute top-1/4 inset-x-0 text-4xl font-bebas text-beelue-dark text-opacity-50 flex flex-row">-->
+            <!--                <span>Biomedical Engineering and Computer Science&nbsp;</span>-->
+            <!--            </div>-->
         </div>
     </div>
     <div id="down" class="mx-auto text-center -mt-16" style="color:#006098">
@@ -112,7 +126,7 @@
     </div>
 </section>
 
-<!-- projects -->
+<!-- Projects -->
 <section id="projects" data-hash="projects" class="text-gray-600 body-font">
     <div class="container px-4 md:px-14 lg:px-24 mx-auto pt-16 pb-12 sm:pt-28 sm:pb-24 my-1/2 xl:h-full">
         <div class="flex flex-wrap w-full flex-col items-center text-center">
@@ -127,9 +141,9 @@
                 </h2>
                 <p class="mb-4 text-base leading-relaxed">
                     ⁌ Contributed a data extraction Python script to the
-                    Reproducible Analysis Pipeline for Data Streams (<a href="https://www.rapids.science/latest/" target="_blank" class="font-semibold text-blue-500">RAPIDS</a>) framework.
+                    Reproducible Analysis Pipeline for Data Streams (<a href="https://www.rapids.science/latest/" target="_blank" class="font-semibold text-beelue-light">RAPIDS</a>) framework.
                     <br>
-                    ⁌ Skills Involved: Python, R, Snakemake, pandas
+                    ⁌ Skills Involved: Python, pandas, Snakemake
                 </p>
                 <a href="https://github.com/carissalow/rapids/" target="_blank"
                    class="pr-4 inline-flex items-center font-semibold text-beelue-dark md:mb-2 lg:mb-0 hover:text-blue-400 ">
@@ -164,20 +178,20 @@
 <!--                    to minimize power consumption and facilitate storage of ever-accumulating amounts of data.-->
                     ⁌ Developed a wavelet-based lossy wearable data compression algorithm as
                     part of the Data Compression Toolbox in the Digital Biomarker Discovery Pipeline
-                    (<a href="https://dbdp.org/" target="_blank" class="font-semibold text-purple-800">DBDP</a>) <br>
+                    (<a href="https://dbdp.org/" target="_blank" class="font-semibold text-beelue-light">DBDP</a>) <br>
                     ⁌ Evaluated its performance on five types of data: accelerometry, electrocardiogram,
                     electrodermal activity, photoplethysmogram, and temperature.
                 </p>
-<!--                <a href="#"-->
-<!--                   class="pr-4 inline-flex items-center font-semibold text-beelue-dark md:mb-2 lg:mb-0 hover:text-blue-400 ">-->
-<!--                    Read More-->
-<!--                    <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20"-->
-<!--                         height="20" fill="currentColor">-->
-<!--                        <path fill="none" d="M0 0h24v24H0z"/>-->
-<!--                        <path-->
-<!--                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/>-->
-<!--                    </svg>-->
-<!--                </a>-->
+                <a href="https://www.mdpi.com/1424-8220/21/2/516" target="_blank"
+                   class="pr-4 inline-flex items-center font-semibold text-beelue-light md:mb-2 lg:mb-0 hover:text-blue-400 ">
+                    Publication
+                    <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20"
+                         height="20" fill="currentColor">
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path
+                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/>
+                    </svg>
+                </a>
                 <a href="https://github.com/DigitalBiomarkerDiscoveryPipeline/Data-Compression-Toolbox" target="_blank"
                    class="pr-4 inline-flex items-center font-semibold text-beelue-dark md:mb-2 lg:mb-0 hover:text-blue-400 ">
                     GitHub
@@ -198,6 +212,16 @@
                                 d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/>
                     </svg>
                 </a>
+                <a href="" target="_blank"
+                   class="pr-4 inline-flex items-center font-semibold text-gray-600 md:mb-2 lg:mb-0 hover:text-gray-900 ">
+                    Blog&nbsp;<span class="italic">(Coming Soon)</span>
+                    <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20"
+                         height="20" fill="currentColor">
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                        <path
+                                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"/>
+                    </svg>
+                </a>
             </div>
             <div id="duke" class="px-8 py-6 lg:w-1/3">
                 <img class="object-scale-down object-center w-full h-40 mb-6 rounded"
@@ -208,6 +232,8 @@
                 <p class="mb-4 text-base leading-relaxed">
                     ⁌ Modelled the state of the COVID-19 pandemic on Duke University's campus
                     in hopes of determining the optimal reopening plan for the Spring 2021 semester.
+                    <br>
+                    ⁌ Helped create a modified SIR model in Python
                 </p>
 <!--                <a href="#"-->
 <!--                   class="pr-4 inline-flex items-center font-semibold text-beelue-dark md:mb-2 lg:mb-0 hover:text-blue-400 ">-->
@@ -257,52 +283,52 @@
             <div class="flex flex-wrap -m-4">
                 <div class="w-full xl:w-1/2 p-4">
                     <div class="border border-gray-200 p-6 rounded-lg h-full">
-                        <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+                        <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-blue-200 text-blue-500 mb-4">
                             <i class="fas fa-music"></i>
                         </div>
                         <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Piano Compositions</h2>
                         <p class="leading-relaxed text-base">
                             Two musical tidbits I composed for fun<br>
-                            𝄞 <a class="italic hover:opacity-75 text-indigo-600"
+                            𝄞 <a class="italic hover:opacity-75 text-beelue-light"
                                   href="https://musescore.com/user/28392174/scores/6271625" target="_blank">Ringtone</a>
                             <br>
-                            𝄢 <a class="italic hover:opacity-75 text-indigo-600"
+                            𝄢 <a class="italic hover:opacity-75 text-beelue-light"
                                   href="https://musescore.com/user/28392174/scores/6164165" target="_blank">When They Fall</a>
                         </p>
                     </div>
                 </div>
                 <div class="w-full xl:w-1/2 p-4">
                     <div class="border border-gray-200 p-6 rounded-lg h-full">
-                        <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+                        <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-blue-200 text-blue-500 mb-4">
                             <i class="fas fa-basketball-ball"></i>
                         </div>
                         <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Playing and Coaching Basketball</h2>
                         <p class="leading-relaxed text-base">
                             Coached a team of 5- and 6-year-olds in Durham with
-                            <a href="http://coachtoinspire.org/" class="font-semibold text-indigo-400">Coach2Inspire</a>,
-                            a truly inspiring organization.
+                            <a href="http://coachtoinspire.org/" class="font-semibold text-beelue-light">Coach2Inspire</a>,
+                            a truly inspiring organization
                         </p>
                     </div>
                 </div>
                 <div class="w-full xl:w-1/2 p-4">
                     <div class="border border-gray-200 p-6 rounded-lg h-full">
-                        <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+                        <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-blue-200 text-blue-500 mb-4">
                             <i class="fas fa-guitar"></i>
                         </div>
                         <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Fingerstyle Guitar</h2>
                         <p class="leading-relaxed text-base">
-                            A daily struggle of picking the right strings while bruising my wrist for percussive effect.
+                            Slow but steady progress, courtesy of Kenneth Acoustic and GuitarPD <a href="https://www.youtube.com/channel/UCKK6N8sPcFjX_HijYC1u3Dw" class="fab fa-youtube text-yellow-800"></a>
                         </p>
                     </div>
                 </div>
                 <div class="w-full xl:w-1/2 p-4">
                     <div class="border border-gray-200 p-6 rounded-lg h-full">
-                        <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+                        <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-blue-200 text-blue-500 mb-4">
                             <i class="far fa-paper-plane"></i>
                         </div>
                         <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Origami</h2>
                         <p class="leading-relaxed text-base">
-                            Highly recommend Jo Nakashima tutorials on Youtube.
+                            Highly recommend Jo Nakashima tutorials <a href="https://www.youtube.com/user/jonakashima" class="fab fa-youtube"></a>
                         </p>
                     </div>
                 </div>
@@ -349,12 +375,14 @@
     </div>
 </section>
 
+<!-- Down -->
 <div id="down-2" class="mx-auto text-center -mt-12 w-96" style="color:#c7ddda">
     <a href="#footer"
        class="fas fa-chevron-down fa-x z-10 animate-pulse">
     </a>
 </div>
 
+<!-- Footer -->
 <footer id="footer" class="mt-12 h-12">
     <p class="text-sm text-center text-opacity-80 text-gray-800">Created and Designed by Juseong (Joe) Kim</p>
 </footer>
@@ -362,6 +390,7 @@
 </body>
 </html>
 
+<!-- Pagination and Smooth Scroll -->
 <script>
     const home = document.getElementById('joe');
     const projects = document.getElementById('rapids_photo');
@@ -389,6 +418,7 @@
     }
 
     window.addEventListener('scroll', function () {
+        // edit pagination and navbar tab
         if (isInViewport(home)) {
             i1.classList.add('fas');
             i2.classList.remove('fas');
@@ -413,7 +443,6 @@
             projects_n.classList.remove('md:bg-beelue-light');
             skills_n.classList.add('md:bg-beelue-light');
             contact_n.classList.remove('md:bg-beelue-light');
-
         } else if (isInViewport(contact)) {
             i1.classList.remove('fas');
             i2.classList.remove('fas');
@@ -425,6 +454,7 @@
         }
     }, {passive: true});
 
+    // delay to allow scroll snap with smooth scroll link
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }

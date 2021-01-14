@@ -8,7 +8,8 @@ module.exports = {
         fontFamily: {
             sans: ['Nunito', 'sans-serif'],
             display: ['Nunito', 'sans-serif'],
-            body: ['Nunito', 'sans-serif']
+            body: ['Nunito', 'sans-serif'],
+            bebas: ['Bebas\\ Neue', 'sans-serif'],
         },
         extend: {
             colors:{
@@ -29,6 +30,9 @@ module.exports = {
                 roll: {
                     '0%, 100%': {transform: 'translateX(0) rotate(0deg)'},
                     '50%': {transform: 'translateX(20rem) rotate(385deg)'}
+                },
+                marquee: {
+
                 }
             },
             animation: {
